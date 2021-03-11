@@ -1,0 +1,97 @@
+useDynLib(greeks)
+
+
+export(
+       # contract 
+       contract,
+       as.contract,
+       as.combo,
+       is.combo,
+
+       # greek calculation
+       greeks,
+
+       # Black Scholes Merton
+       BlackScholesMerton,
+       #call.value,
+       #put.value,
+
+       # binomial tree methods
+       CRRtree,
+       JRtree,
+       LRtree,
+
+       # trinomial tree methods
+
+       # dividend models and approximations
+       DiscreteDivYield,
+       # DiscreteDivYieldAnalytic,
+       BosVandermarkCashDividend,
+       EscrowedDividend,   # a.k.a Merton 73
+       ChrissDividend,
+       BosGairatShepelevaDividend, 
+       HaugHaugDividend,
+       HaugHaugLewisDividend,
+
+
+       # skewness & kurtosis adjustments
+       JarrowRuddSkewKurtosis,
+       CorradoSuSkewKurtosis,
+       ModifiedCorradoSuSkewKurtosis,
+
+       # jump diffusion models
+       JumpDiffusionMerton,
+       JumpDiffusionBates,
+
+       # greeks methods (not yet S3!!!)
+       greeks.JDM,
+       greeks.JDB,
+       # greeks.CRRtree
+       # greeks.JRtree
+       # greeks.LRtree
+       # greeks.default
+
+       # stochastic volatility models
+       # SABR
+       # Hull
+
+       # implied volatility       
+
+       # osi
+       as.osi,
+       is.osi,
+       try.osi,
+
+       # osi extraction
+       expiry,
+       right,
+       strike,
+       tte,
+       underlying,
+
+       # expiration calendar   TODO add weekly
+       optionsExp,
+       nextExp,
+
+       # payoff
+       payoff
+      )
+
+S3method(as.contract, osi)
+S3method(as.contract, character)
+S3method(as.contract, contract)
+
+S3method(as.osi, contract)
+S3method(as.osi, default)
+
+S3method(print, greeks)
+
+S3method(print, binomialtree)
+
+S3method(Ops, osi)
+S3method(print, osi)
+S3method(str, osi)
+
+S3method(as.data.frame, osi)
+
+S3method(plot, payoff)
